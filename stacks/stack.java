@@ -1,6 +1,3 @@
-package stacks;
-// Packages this class under the package stacks
-
 public class stack{
     int top=-1;
     int stack[];

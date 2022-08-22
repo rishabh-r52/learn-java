@@ -1,34 +1,40 @@
 import java.util.Scanner;
 // Imports the Scanner class so we can take inputs in our program
 
-public class stackops {
+public class queueops {
     public static void main(String args[]){
         Scanner scMain = new Scanner(System.in);
         // Scanner scMain for taking inputs throughout the program
 
-        System.out.print("Enter Stack Size: ");
-        stack stack1 = new stack(scMain.nextInt());
-        // Reads the stack size and initializes our stack using constructor stackclass
+        System.out.print("Enter queue Size: ");
+        queue queue1 = new queue(scMain.nextInt());
+        // Reads the queue size and initializes our queue using constructor queue
 
         while(true){
-            System.out.println("\n1. PUSH\n2. POP\n3. DISPLAY\n4. Exit");
+            System.out.println("\n1. Enqueue\n2. Dequeue\n3. Peek (Front element)\n4. Reset\n5. Display\n6. Exit");
             // Menu for traversing through different features of this program
             switch(scMain.nextInt()){
                 case 1:
-                    System.out.print("\nElement to PUSH: ");
-                    stack1.push(scMain.nextInt());
-                    // Will read int input from scMain and directly send to push method
+                    System.out.print("\nElement to Enqueue: ");
+                    queue1.enqueue(scMain.nextInt());
+                    // Will increment the rear index by 1 and add an item to the rear of the queue
                     break;
                 case 2:
-                    stack1.pop();
-                    // Will move the topmost element to stack1.popped and reduce top by 1
-                    // int item = stack1.popped;
-                    // Can use the above line to access the popped element
+                    queue1.dequeue();
+                    // Will remove an element from the front of the queue and increment front index by 1
                     break;
                 case 3:
-                    stack1.display();
+                    int peeked = queue1.peek();
+                    if(peeked != 0)
+                        System.out.println("Peeked: "+peeked);
                     break;
                 case 4:
+                    queue1.reset();
+                    break;
+                case 5:
+                    queue1.display();
+                    break;
+                case 6:
                     scMain.close();
                     // Closes the scMain Scanner
                     System.exit(0);
