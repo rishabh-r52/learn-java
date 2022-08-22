@@ -39,7 +39,7 @@ public class stack{
         if(top == -1){
             System.out.println("Stack empty!");
             return;
-            // Will return without printing because stack is empty
+            // Will return without printing if stack is empty
         }
         System.out.println("\nStack Elements:");
         for(int i=top;i>=0;i--)
